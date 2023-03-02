@@ -1,7 +1,11 @@
+import React from 'react';
+import { Htag } from '@/components/Htag/Htag';
+
+
 export default function Home(): JSX.Element {
   return (
     <>
-      Рабочий проект
+      <Htag tag="h1">Текст</Htag>
     </>
   );
 }

@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Htag, Paragraph, Tag } from '@/components';
+import React, { useState } from 'react';
+import { Button, Htag, Paragraph, Rating, Tag } from '@/components';
 
 
 export default function Home(): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
 
-  useEffect(() => {
-    console.log('Counter' + counter);
-    return function cleanup() {
-      console.log('Unmount');
-    };
-  });
-
-
-    useEffect(() => {
-      if (counter > 0){
-        console.log('Mounted');
-      }
-    });
+  const [rating, setRating] = useState<number>(4);
 
   return (
     <>
@@ -31,7 +19,7 @@ export default function Home(): JSX.Element {
       <Tag size="M" color="red">Red</Tag>
       <Tag size="S" color="green">Green</Tag>
       <Tag color="primary">Primary</Tag>
-
+      <Rating rating={rating} isEditable setRating={setRating}/>
     </>
   );
 }

@@ -11,9 +11,14 @@ export default function Home(): JSX.Element {
       console.log('Unmount');
     };
   });
-  useEffect(() => {
-    console.log('Mounted');
-  });
+
+
+    useEffect(() => {
+      if (counter > 0){
+        console.log('Mounted');
+      }
+    });
+
   return (
     <>
       <Htag tag="h1">{counter}</Htag>

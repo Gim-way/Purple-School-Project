@@ -7,21 +7,21 @@ import { TopLevelCategory, TopPageModel } from '@/interfaces/page.interface'
 import { ProductModel } from '@/interfaces/product.interface'
 import { NextParsedUrlQuery } from 'next/dist/server/request-meta'
 import { firstLevelMenu } from '@/helpers/helpers'
+import { TopPageComponent } from '@/page-components'
 
 
-function Course({
-  menu,
+function TopPage({
+  firstCategory,
   page,
   products
-}: CourseProps): JSX.Element {
-  return (
-    <>
-      {products && products.length}
-    </>
-  )
+}: TopPageProps): JSX.Element {
+  return <TopPageComponent
+    firstCategory={firstCategory}
+    page={page}
+    products={products}/>
 }
 
-export default withLayout(Course)
+export default withLayout(TopPage)
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let paths: string[] = []
@@ -37,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: GetStaticPropsContext<NextParsedUrlQuery>) => {
+export const getStaticProps: GetStaticProps<TopPageProps> = async ({ params }: GetStaticPropsContext<NextParsedUrlQuery>) => {
   if (!params) {
     return {
       notFound: true
@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: Ge
   }
 }
 
-interface CourseProps extends Record<string, unknown> {
+interface TopPageProps extends Record<string, unknown> {
   menu: MenuItem[];
   firstCategory: TopLevelCategory;
   page: TopPageModel;

@@ -18,7 +18,6 @@ export const Tag = ({
         ? <a href={href}>{children}</a>
         : <>{children}</>
       }
-      {children}
     </div>
   );
 };

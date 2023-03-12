@@ -11,8 +11,6 @@ import cn from 'classnames'
 
 export const Product = ({
   product,
-  className,
-  ...props
 }: ProductProps): JSX.Element => {
   return (
     <Card className={styles.product}>

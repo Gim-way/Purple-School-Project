@@ -1,4 +1,4 @@
-import { TextareaProps } from './Textaria.props'
+import { TextareaProps } from './Textarea.props'
 import styles from './Textarea.module.css';
 import cn from 'classnames';
 

@@ -3,7 +3,7 @@ import { Button, Htag, Paragraph, Rating, Tag } from '@/components'
 import { withLayout } from '@/layout/Layout'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
-import { MenuItem } from '@/interfaces/menu.interfaces'
+import { MenuItem } from '@/interfaces/menu.interface'
 
 
 function Home({ menu }: HomeProps): JSX.Element {
